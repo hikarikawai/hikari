@@ -21,15 +21,15 @@ from misskaty.vars import COMMAND_HANDLER
 
 PING_LOCK = Lock()
 
-@app.on_message(filters.command(["ping"], COMMAND_HANDLER))
+@app.on_message(filters.command(["mping"], COMMAND_HANDLER))
 async def ping(_, ctx: Message):
     currentTime = get_readable_time(time.time() - botStartTime)
     start_t = time.time()
-    rm = await ctx.reply_msg("🐱 Pong!!...")
+    rm = await ctx.reply_msg("🐰 Pong!!...")
     end_t = time.time()
     time_taken_s = round(end_t - start_t, 3)
     await rm.edit_msg(
-        f"<b>🐈 MissKatyBot {misskaty_version} based Pyrogram {pyrover} Online.</b>\n\n<b>Ping:</b> <code>{time_taken_s} detik</code>\n<b>Uptime:</b> <code>{currentTime}</code>\n<b>Python Version:</b> <code>{platform.python_version()}</code>"
+        f"<b>🐰 Wynne {misskaty_version} based Pyrogram {pyrover} Online.</b>\n\n<b>Ping:</b> <code>{time_taken_s} detik</code>\n<b>Uptime:</b> <code>{currentTime}</code>\n<b>Python Version:</b> <code>{platform.python_version()}</code>"
     )
 
 
